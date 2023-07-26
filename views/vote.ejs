@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title><%= %>Vote | <%= election.name %> | Online Voting Platform</title>
+    <meta name="csrf-token" content="<%= csrf %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="bg-[url('https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/12/Gradient_builder_2.jpg?auto=format&q=60&w=1815&h=1361.25&fit=crop&crop=faces')] bg-no-repeat bg-cover"
+  >
+    <div class="flex justify-center italic">
+      <%- include ('header') %>
+    </div>
+    <div class="flex flex-col justify-center items-center p-4">
+      <div class="flex flex-col justify-center md:w-2/5 w-full">
+        <hr />
+        <div class="flex justify-center pb-4">
+          <p class="text-4xl font-semibold pt-4 font-serif	font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;"><%= election.name %></p>
+        </div>
+
+        <% if (election.ended) { %>
+            <div class="flex justify-center">
+            <p class="text-2xl text-gray-600">This election has ended.</p>
+            </div>
+        <% } else if (!election.launched) { %>
+            <div class="flex justify-center">
+            <p class="text-2xl text-gray-600 font-serif	font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;">
+                This election has not been launched yet.
+            </p>
+            </div>
+        <% } else { %>
+            <div class="flex flex-col gap-4">
+            <% if (verified) { %>
+              <% if (voter.voted) { %>
+                  <div class="flex justify-center">
+                      <p class="text-2xl text-gray-600 font-serif	font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;">Thank you for voting.</p>
+                  </div>
+              <% } else { %>
+                <%- include ('Ballot.ejs', {election: election, voter: voter}) %>
+              <% } %>                
+            <% } else { %>
+              <%- include ('voterLogin.ejs', {election: election}) %>
+            <% } %>
+            </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
