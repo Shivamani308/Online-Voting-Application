@@ -25,14 +25,19 @@ git clone:https://github.com/Shivamani308/Online-Voting-app/tree/main
 
 ==>Go to the project directory in th linux shell then 
   cd Online-Voting_App
+  
 ==>Install dependencies from the which is present in the Package.json file
 (present in Dependencies and devDependencies)
+
 **bash shell or linux shell**
 ==>installing  of all those dependencies and devDependencies by following this command..
     npm install
+    
 ==>after completion of install all those dependencies....Now it's time to  start the server..
+
 **Start the server**
   npm start
+  
 ## Running Tests
 
 To run tests, run the following command
