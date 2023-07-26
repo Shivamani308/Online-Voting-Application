@@ -26,7 +26,7 @@ Don't forget to create the databse with corresponding name as mentioned in `conf
 Clone the project
 
 ==>Go to Bash Shell or linux shell:
-git clone:
+git clone:https://github.com/Shivamani308/Online-Voting-app/tree/main
 ==>Go to the project directory in th linux shell then 
   cd Online-Voting_App
 
@@ -48,4 +48,8 @@ git clone:
 To run tests, run the following command
 
   npm test
+  ##Deployment the Application using Render.API
+  https://online-voting-9g78.onrender.com/
+
+
 
