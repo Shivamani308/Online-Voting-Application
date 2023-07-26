@@ -1,5 +1,5 @@
 
-# Online Voting
+# Online Voting application
 
 One shot platform to host elections, add voters, and view results graphs
 # Tech Stack
@@ -8,7 +8,7 @@ Client: EJS, TailwindCSS
 
 Server: Node, Express
 
-Database: Postgres
+Database: Postgresql
 
 
 ## Features 
@@ -26,12 +26,7 @@ Don't forget to create the databse with corresponding name as mentioned in `conf
 Clone the project
 
 ==>Go to Bash Shell or linux shell:
-
-
-  git clone  https://github.com/Rangha-Vardhan-1552/Online_Voting_App.git
-
-
-
+git clone:
 ==>Go to the project directory in th linux shell then 
   cd Online-Voting_App
 
